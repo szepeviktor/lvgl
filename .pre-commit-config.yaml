@@ -17,23 +17,25 @@ repos:
         name: Formatting source files
         entry: astyle --options=scripts/code-format.cfg --ignore-exclude-errors
         stages:
-        - commit
+        - "commit"
         language: system
         pass_filenames: true
         verbose: true
         files: |
-          (?x)^(
-              demos/ |
-              examples/ |
-              src/ |
-              tests/
-          )
+            (?x)^(
+                demos/ |
+                examples/ |
+                src/ |
+                tests/
+            )
         exclude: |
-          (?x)^(
-              src/libs/ |
-              src/lv_conf_internal.h
-           )
-        types_or: ["c", "header"]
+            (?x)^(
+                src/libs/ |
+                src/lv_conf_internal.h
+             )
+        types_or:
+        - "c",
+        - "header"
 -
     repo: https://github.com/crate-ci/typos
     rev: v1.16.20
